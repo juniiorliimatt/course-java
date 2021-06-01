@@ -1,4 +1,4 @@
-package curso.estrutura.condicional;
+package curso.exercicios.estrutura.condicional;
 
 import java.util.Locale;
 import java.util.Scanner;

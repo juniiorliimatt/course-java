@@ -1,4 +1,4 @@
-package curso.estrutura.condicional;
+package curso.exercicios.estrutura.condicional;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
