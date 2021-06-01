@@ -1,4 +1,4 @@
-package curso.exercicios;
+package curso.exercicios.estrutura.sequencial;
 
 import java.util.Scanner;
 import java.util.logging.Logger;

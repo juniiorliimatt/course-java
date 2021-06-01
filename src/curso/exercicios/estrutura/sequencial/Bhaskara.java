@@ -1,4 +1,4 @@
-package curso.estrutura.sequencial;
+package curso.exercicios.estrutura.sequencial;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
