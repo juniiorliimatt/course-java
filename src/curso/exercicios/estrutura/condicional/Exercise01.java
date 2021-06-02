@@ -1,20 +1,15 @@
 package curso.exercicios.estrutura.condicional;
 
-import java.util.Scanner;
-import java.util.logging.Logger;
+import curso.utils.Util;
 
 public class Exercise01 {
     public static void main(String[] args) {
-        final var log = Logger.getLogger(Exercise01.class.getName());
-        var scan = new Scanner(System.in);
-        log.info("Digite um número NEGATIVO ou POSITIVO: ");
-        var numero = scan.nextInt();
-        if(numero > 0){
-            log.info("POSITIVO");
+        Util.message("Digite um número NEGATIVO ou POSITIVO: ");
+        var numero = Util.scanInteger();
+        if (numero > 0) {
+            Util.message("POSITIVO");
         } else {
-            log.info("NEGATIVO");
+            Util.message("NEGATIVO");
         }
-
-        scan.close();
     }
 }
