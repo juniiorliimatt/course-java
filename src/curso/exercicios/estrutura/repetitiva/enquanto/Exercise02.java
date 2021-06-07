@@ -1,4 +1,4 @@
-package curso.exercicios.estrutura.repetitiva;
+package curso.exercicios.estrutura.repetitiva.enquanto;
 
 import curso.exercicios.estrutura.condicional.Exercise07;
 

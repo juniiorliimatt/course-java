@@ -1,4 +1,4 @@
-package curso.exercicios.estrutura.repetitiva;
+package curso.exercicios.estrutura.repetitiva.enquanto;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
