@@ -2,50 +2,46 @@ package curso.entities;
 
 public class Account {
     private final int number;
-    private String name;
+    private String holder;
     private double balance;
 
-    public Account(int number, String name) {
+    public Account(int number, String holder) {
         this.number = number;
-        this.name = name;
+        this.holder = holder;
     }
 
-    public Account(int number, String name, double balance) {
+    public Account(int number, String holder, double initialDeposit) {
         this.number = number;
-        this.name = name;
-        this.balance = balance;
+        this.holder = holder;
+        deposit(initialDeposit);
     }
 
     public int getNumber() {
         return number;
     }
 
-    public String getName() {
-        return name;
+    public String getHolder() {
+        return holder;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHolder(String holder) {
+        this.holder = holder;
     }
 
     public double getBalance() {
         return balance;
     }
 
-    public void deposit(double value) {
-        this.balance += value;
+    public void deposit(double amount) {
+        this.balance += amount;
     }
 
-    public String withdraw(double value) {
-        if (this.balance > (value + 5)) {
-            this.balance -= (value + 5);
-            return "Saque realizado com sucesso!";
-        }
-        return "Saldo insuficiente";
+    public void withdraw(double value) {
+        this.balance -= (value + 5.0);
     }
 
     @Override
     public String toString() {
-        return "Account " + number +", Holder: " + name + ", Balance: $ " + balance + "\n";
+        return "Account " + number + ", Holder: " + holder + ", Balance: $ " + String.format("%.2f", balance) + "\n";
     }
 }

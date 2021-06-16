@@ -4,62 +4,46 @@ import curso.entities.Account;
 
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class ProgramBank {
     public static void main(String[] args) {
-
-        var account = createAccount();
-
-        deposit(account);
-        showData(account);
-
-        withdraw(account);
-        showData(account);
-
-    }
-
-    public static Account createAccount() {
         Locale.setDefault(Locale.US);
+        final var log =Logger.getLogger(ProgramBank.class.getName());
         var sc = new Scanner(System.in);
-        System.out.print("Enter account number: ");
+
+        log.info("Enter account number: ");
         var number = sc.nextInt();
 
-        System.out.print("Enter account holder: ");
-        var name = sc.nextLine();
-        name = sc.nextLine();
+        log.info("Enter account holder: ");
+        sc.nextLine();
+        var holder = sc.nextLine();
 
-        System.out.print("Is there na initial deposit? (y/n)? ");
-        var escolha = sc.next();
+        log.info("Is there na initial deposit? (y/n)? ");
+        var response = sc.next().charAt(0);
 
-        var deposit = 0.0;
-        if (escolha.equalsIgnoreCase("y")) {
-            System.out.print("Enter initial deposit value: ");
-            deposit = sc.nextDouble();
+        Account ac;
+        if (response == 'y') {
+            log.info("Enter initial deposit value: ");
+            ac = new Account(number, holder, sc.nextDouble());
+        } else {
+            ac = new Account(number, holder, 0);
         }
-        var account = new Account(number, name, deposit);
 
-        System.out.println();
-        System.out.println("Account data:\n" + account.toString());
+        String accountDetail;
+        accountDetail = "Account data:\n" + ac;
+        log.info( accountDetail);
 
-        return account;
-    }
+        log.info("Enter a deposit value: ");
+        ac.deposit(sc.nextDouble());
+        accountDetail = "Updated account data: \n" + ac;
+        log.info(accountDetail);
 
-    public static void deposit(Account account) {
-        Locale.setDefault(Locale.US);
-        var sc = new Scanner(System.in);
-        System.out.print("Enter a deposit value: ");
-        var deposit = sc.nextDouble();
-        account.deposit(deposit);
-    }
+        log.info("Enter a withdraw value: ");
+        ac.withdraw(sc.nextDouble());
+        accountDetail = "Updated account data: \n" + ac;
+        log.info(accountDetail);
 
-    public static void withdraw(Account account) {
-        Locale.setDefault(Locale.US);
-        var sc = new Scanner(System.in);
-        System.out.print("\nEnter a withdraw value: ");
-        account.withdraw(sc.nextDouble());
-    }
-
-    public static void showData(Account account) {
-        System.out.println("Updated account data: \n" + account.toString());
+        sc.close();
     }
 }
