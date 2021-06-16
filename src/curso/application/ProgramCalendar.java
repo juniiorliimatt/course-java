@@ -17,10 +17,10 @@ public class ProgramCalendar {
         d = cal.getTime();
         System.out.println(d);
 
-        // meses começão a partir do 0;
+        // meses começam a partir do 0;
         var month = cal.get(Calendar.MONTH) + 1;
         var minutes = cal.get(Calendar.MINUTE);
         System.out.println("Mês: " + month + ", Minutes: " + minutes);
-        
+
     }
 }
