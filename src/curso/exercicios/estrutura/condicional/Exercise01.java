@@ -1,6 +1,6 @@
 package curso.exercicios.estrutura.condicional;
 
-import curso.utils.Util;
+import curso.util.Util;
 
 public class Exercise01 {
     public static void main(String[] args) {

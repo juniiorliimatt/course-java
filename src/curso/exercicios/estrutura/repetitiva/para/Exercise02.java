@@ -1,6 +1,6 @@
 package curso.exercicios.estrutura.repetitiva.para;
 
-import curso.utils.Util;
+import curso.util.Util;
 
 public class Exercise02 {
     // 5
