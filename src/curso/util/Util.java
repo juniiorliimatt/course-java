@@ -1,4 +1,4 @@
-package curso.utils;
+package curso.util;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
