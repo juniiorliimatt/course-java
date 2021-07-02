@@ -3,9 +3,9 @@ package curso.application;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class Main {
+public class ProgramCronometragem {
     public static void main(String[] args) {
-        final var log = Logger.getLogger(Main.class.getName());
+        final var log = Logger.getLogger(ProgramCronometragem.class.getName());
         log.info("Digite um numero para a contagem.");
         var scan = getScanner().nextInt();
 
